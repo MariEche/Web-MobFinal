@@ -1,3 +1,5 @@
+//navbar.js
+
 import React from 'react';
 
 export default function Navbar({itemsInCart,calculateTotal}) {
@@ -6,7 +8,7 @@ export default function Navbar({itemsInCart,calculateTotal}) {
             <h1>Clothing Store</h1>
             <div className="cart_info">
                 <p>Items in Cart: {itemsInCart}</p>
-                <p>Total: ${calculateTotal()}</p>
+                <p>Total: ${calculateTotal().toFixed(2)}</p>
             </div>
         </div>
     );

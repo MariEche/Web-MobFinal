@@ -1,3 +1,5 @@
+//data.js
+
 export const list_products = [
     {id: 1, name: "Pink Dress", price: 19.99, stock: 10, description: "Beautiful pink summer dress", category: "Dresses"},
     {id: 2, name: "Blue Dress", price: 19.99, stock: 10, description: "Beautiful blue summer dress", category: "Dresses"},

@@ -1,9 +1,11 @@
+// App.js
+
 import React, { useState , useEffect} from 'react';
-import Navbar from './navbar';
-import Filtering from './filtering';
+import Navbar from './public/src/Navbar';
+import Filtering from './Filtering';
 import Products from './product_cards';
 import Modal from './components/modal';
-import { list_products } from './data';
+import { list_products } from './public/src/data';
 
 export default function App() {
     const [products, setProducts] = useState(list_products);

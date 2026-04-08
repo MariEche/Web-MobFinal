@@ -1,0 +1,22 @@
+.product_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.product_display {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 200px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f5f5f5;
+}
+
+.filtering {
+  margin: 1rem 0;
+}

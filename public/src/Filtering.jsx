@@ -1,10 +1,12 @@
+// filtering.js
+
 import React from 'react';
 
 export default function Filtering({byCategories, byPrice}) {
     return (
         <div className = "filtering">
             <select onChange={(e) => byCategories(e.target.value)}>
-                <option value="">All Categories</option>
+                <option value="">All</option>
                 <option value="Shirts">Shirts</option>
                 <option value="Pants">Pants</option>
                 <option value="Dresses">Dresses</option>
