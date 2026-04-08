@@ -3,7 +3,7 @@ import React from 'react';
 export default function Products({product,addToCart, openModal}) {
 
     return (
-        <div className="product_dispaly">
+        <div className="product_display">
             <h2 className="product_name">{product.name}</h2>
             <p>${product.price}</p>
             <p>Stock: {product.stock}</p>

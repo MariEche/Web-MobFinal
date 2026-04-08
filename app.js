@@ -1,5 +1,5 @@
 import React, { useState , useEffect} from 'react';
-import Navbar from '/navbar';
+import Navbar from './navbar';
 import Filtering from './filtering';
 import Products from './product_cards';
 import Modal from './components/modal';
@@ -17,24 +17,25 @@ export default function App() {
     const addToCart = (product) => {
         if (product.stock <= 0) return;
 
-        setCart([...cart, product]);
-        setTotalItems(totalItems + 1);
-        setTotalPrice(totalPrice + product.price);
+        setCart(prev => [...prev, product]);
+        setTotalItems(prev => prev + 1);
+        setTotalPrice(prev => prev + product.price);
 
-        setProducts(products.map(p => p.id === product.id ? { ...p, stock: p.stock - 1 } : p));
+        setProducts(products.map(p => 
+            p.id === product.id ? { ...p, stock: p.stock - 1 } : p));
     };
 
-    const filteredProducts = products.filter(p => category === "All" || p.category === category).sort((a, b) => {
+    const filteredProducts = products
+    .filter(p => categoryFilter === "All" || p.category === categoryFilter)
+    .sort((a, b) => {
         if (priceFilter === "low") return a.price - b.price;
         if (priceFilter === "high") return b.price - a.price;
         return 0;
     });
 
-    const finalPrice = totalPrice;
-
     return (
         <div>
-            <Navbar itemsInCart={totalItems} calculateTotal={() => finalPrice} />
+            <Navbar itemsInCart={totalItems} calculateTotal={() => totalPrice} />
             <Filtering byCategories={setCategoryFilter} byPrice={setPriceFilter} />
         
 
